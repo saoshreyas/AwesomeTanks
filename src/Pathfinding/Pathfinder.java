@@ -57,7 +57,7 @@ public class Pathfinder {
 
 	/**
 	 * Makes a Pathfinder object and intitalizes p, the 2D array of Nodes
-	 * @param bp
+	 * @param bp	BackgroundPanel used for Pathfinder
 	 */
 	public Pathfinder(BackgroundPanel bp) {
 		this.bp = bp;
@@ -125,11 +125,12 @@ public class Pathfinder {
 	 * intializes the starting, current, & goal node
 	 * sets solid to true for all nodes that have collision
 	 * intitializes the costs of all nodes
-	 * @param startCol
-	 * @param startRow
-	 * @param goalCol
-	 * @param goalRow
-	 * @param e1
+	 *
+	 * @param startCol	start column of entity
+	 * @param startRow	start row of entity
+	 * @param goalCol	end column of entity
+	 * @param goalRow	end row of entity
+	 * @param e1		entity used for the method
 	 */
 	public void setNodes(int startCol, int startRow, int goalCol, int goalRow, Entity e1) {
 		resetNodes();
@@ -164,7 +165,8 @@ public class Pathfinder {
 	 * gCost is Manhattan distance from current node to start node
 	 * hCost is Manhattan distance from current node to goal node
 	 * fCost is combination of the two
-	 * @param node
+	 *
+	 * @param node		the node which the cost is being gotten for
 	 */
 	private void getCost(Node node) {
 
@@ -188,7 +190,8 @@ public class Pathfinder {
 	 * examines the neighboring nodes (up, left, down, right) and calls openNode() to process each neighbor. 
 	 * It selects the best node based on its fCost and gCost & sets it as the new currentNode	 
 	 * If the goalNode is reached, it sets goalReached to true and calls trackThePath() to determine the path.
-	 * @return
+	 *
+	 * @return	whether the goal is reached or not
 	 */
 	public boolean search() {
 		
@@ -279,7 +282,8 @@ public class Pathfinder {
 	
 	/**
 	 * Opens a node under certain conditions, sets parent node and add its to openList
-	 * @param node
+	 *
+	 * @param node	Node that is opened
 	 */
 	private void openNode(Node node) {
 		
